@@ -1,0 +1,29 @@
+<%- include('upper-partial') -%>
+
+<h1>Bitácora del sistema</h1>
+<a class="btn btn-secondary" href="/account/logout">Cerrar sesión</a>
+
+<div class="mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Descripción</th>
+        <th>Usuario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% logArray.forEach((log) => {%>
+        <tr>
+          <td><%= log.id%></td>
+          <td><%= log.logtitle%></td>
+          <td><%= log.description%></td>
+          <td><%= log.username%></td>
+        </tr>
+      <% });%>
+    </tbody>
+  </table>
+</div>
+
+<%- include('lower-partial') -%>

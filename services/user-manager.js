@@ -1,17 +1,6 @@
-
-const { Client, ClientBase } = require('pg')
-async function getClient() {
-    const client = new Client()
-    await client.connect()
-    return client;
-}
+const getClient = require('./db-client');
 
 async function findUser(email, password) {
-  console.log(process.env.PGUSER);
-  console.log(process.env.PGHOST);
-  console.log(process.env.PGPASSWORD);
-  console.log(process.env.PGDATABASE);
-  console.log(process.env.PGPORT);
   const client = await getClient();
   const query = 'SELECT id, name, email FROM users WHERE email = \'' + email + '\' AND password = \'' + password + '\'';
   console.log(query);

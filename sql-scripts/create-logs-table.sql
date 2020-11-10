@@ -1,0 +1,6 @@
+CREATE TABLE logs(
+  id BIGSERIAL PRIMARY KEY NOT NULL,
+  logtitle TEXT NOT NULL,
+  description TEXT NOT NULL,
+  username TEXT NOT NULL
+)
